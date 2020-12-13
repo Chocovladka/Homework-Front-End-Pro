@@ -1,62 +1,75 @@
-const students = [
+const questions = [
     {
-        id: 10,
-        name: 'John Smith',
-        marks: [10, 8, 6, 9, 8, 7]
+        textQ: 'Сколько будет 2+2?',
+        answer: '4',
+        type: 'ask'
     },
     {
-        id: 11,
-        name: 'John Doe',
-        marks: [9, 8, 7, 6, 7]
+        textQ: 'Солнце встает на востоке?',
+        answer: true,
+        type: 'confirmation'
     },
     {
-        id: 12,
-        name: 'Thomas Anderson',
-        marks: [6, 7, 10, 8]
+        textQ: 'Сколько будет 5 / 0?',
+        answer: 'на 0 делить нельзя',
+        type: 'ask'
     },
     {
-        id: 13,
-        name: 'Jean-Baptiste Emanuel Zorg',
-        marks: [10, 9, 8, 9]
-    }
+        textQ: 'Какого цвета небо?',
+        answer: 'голубое',
+        type: 'ask'
+    },
+    {
+        textQ: 'Как правильный ответ на главный вопрос жизни, вселенной и всего такого.',
+        answer: '42',
+        type: 'ask'
+    },
 ];
 
-let allMarks = getMarksMassive(students);
+let answerArr = showQuestion();
 
-console.log(averageStudentMark(12));
+let points = calcPoints();
+let result = showResult(points);
 
-console.log(averageGroupMark());
-
-// let avg = arr.reduce((acc, { marks }) => acc + marks, 0) / marks.length
-// console.log(arr[0].marks)
-
-function averageStudentMark(idNum) {
-    let index = getIndex(idNum);
-    let avg =
-        students[index].marks.reduce((acc, marks) => acc + marks, 0)
-        / students[index].marks.length;
-    return index, avg
-}
-
-function getIndex(idNum) {
-    let index = students.findIndex(item => item.id === idNum);
-    return index
-}
-
-function averageGroupMark() {
-    let avg;
-    avg = allMarks.reduce((sum, current) => sum + current)/allMarks.length
-    return avg
-}
-
-function getMarksMassive(students) {
+function showQuestion() {
+    let questionsArr = questions.map(({ textQ }) => textQ);
+    let typeArr = questions.map(({ type }) => type);
     let massive = [];
-    for (let i = 0; i < students.length; i++){
-        massive[i] = students[i].marks;
-    }
-    return massive.flat()
+    massive = defQuestionType(questionsArr, typeArr);
+    return massive;
 }
 
+// function mapMassive(massive, key) {
+//     return massive.map(({ key }) => key);
+// }
 
 
+function defQuestionType(qArr, tArr) {
+    let massive = [];
+    for (let i = 0; i < qArr.length; i++) {
+        if (tArr[i] === 'confirmation') {
+            massive[i] = confirm(qArr[i]);
+        } else {
+            massive[i] = prompt(qArr[i]);
+        }
+    }
+    return massive
+}
+
+function calcPoints() {
+    let correctAnswers = questions.map(({ answer }) => answer);
+    let result = 0;
+    for (let i = 0; i < answerArr.length; i++) {
+        if (answerArr[i] === correctAnswers[i]) {
+            result += 10;
+        } else { 
+            result += 0;
+        }
+    }
+    return result
+}
+
+function showResult(res) {
+    alert('Вы набрали ' + `${res}` + ' баллов');
+}
 
