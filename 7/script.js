@@ -15,7 +15,6 @@ function getDigit() {
 // }
 
 function calcDigitsSum(n) {
-    let sum;
     if (n == 0) {
     return n;
     } else {
