@@ -1,0 +1,59 @@
+* {
+   box-sizing: border-box;
+   text-align: center;
+}
+
+body{
+    font-family: "Libre Baskerville", serif;
+    background-color: rgb(28, 14, 66);
+    /* background: linear-gradient(#58b6b9, #edf1cf); */
+}
+
+#main-title{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500px;
+}
+
+#list{
+    list-style: none;
+    color: #fff;
+}
+
+#my-input{
+    width: 230px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+#my-input:focus{
+   box-shadow: 0px 0px 24px 0px rgba(218, 187, 187, 0.25); 
+}
+
+#btn{
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+    background: #f55f08;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    transition: background 1s ease;
+}
+
+#btn:hover{
+    box-shadow: 0px 0px 24px 0px rgba(219, 102, 102, 0.25);
+    cursor: pointer;
+    background: #8a240a;
+}
+
+.list-item{
+    color: #fff;
+}
+
+
+/* font-family: 'Josefin Sans', sans-serif; */
