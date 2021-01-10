@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Контактов</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" async></script>
+</head>
+<body>
+    <div id="container">
+        <table id="table">
+            <caption id="table-title">Список контактов</caption>
+            <tbody id="t-body">
+                <thead>
+                    <tr class="line">
+                        <th >Имя</th>
+                        <th >Фамилия</th>
+                        <th >Номер</th>
+                        <th >Действие</th>
+                    </tr>
+                </thead>
+            </tbody>
+        </table>
+        <form action="#">
+            <input  id="name" class="input" type="text">
+            <input id="surname" class="input" type="text">
+            <input id="phone" class="input" type="tel">
+            <input id="action" class="input" type="text">
+            <button id="btn" class="button">Добавить</button>
+        </form>
+    </div>
+</body>
+</html>
