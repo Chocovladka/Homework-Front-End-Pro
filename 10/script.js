@@ -1,7 +1,5 @@
 let tBody = document.querySelector('#t-body');
 
-let button = document.querySelector('#btn');
-
 let nameInput = document.querySelector('#name');
 
 let surnameInput = document.querySelector('#surname');
@@ -10,10 +8,7 @@ let phoneInput = document.querySelector('#phone');
 
 let actionInput = document.querySelector('#action');
 
-let newTr = document.createElement('tr');
 let inputs = document.querySelectorAll('input');
-
-// button.addEventListener('click', onAddBtnClick)
 
 container.addEventListener('click', onBtnClick)
 
@@ -39,15 +34,6 @@ function onAddBtnClick() {
     addInfo(nameInput.value, surnameInput.value, phoneInput.value, actionInput.value);
     clearInput();
 }
-
-// function addInfo() {
-//     let contacts = [nameInput.value, surnameInput.value, phoneInput.value, actionInput.value];
-//     for (let i = 0; i < contacts.length; i++){
-//         let el = document.createElement('td');
-//         el.textContent = contacts[i];
-//         document.querySelector('tr').append(el)
-//     }
-// }
 
 function addInfo(name, surname, phone, action) {
     let elHtml = `
