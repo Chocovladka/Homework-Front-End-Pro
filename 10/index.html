@@ -15,7 +15,7 @@
             <caption id="table-title">Список контактов</caption>
             <tbody id="t-body">
                 <thead>
-                    <tr class="line">
+                    <tr>
                         <th >Имя</th>
                         <th >Фамилия</th>
                         <th >Номер</th>
@@ -25,12 +25,23 @@
             </tbody>
         </table>
         <form action="#">
-            <input  id="name" class="input" type="text">
-            <input id="surname" class="input" type="text">
-            <input id="phone" class="input" type="tel">
-            <input id="action" class="input" type="text">
-            <button id="btn" class="button">Добавить</button>
+            <input  id="name-input" name="name" class="input" type="text">
+            <input id="surname-input" name="surname" class="input" type="text">
+            <input id="phone-input" name="phone" class="input" type="tel">
+            <input id="action-input" name="action" class="input" type="text">
+            <button id="add-btn" class="button add-btn">Добавить</button>
         </form>
     </div>
+    <script type="text/template" id="contact-template">
+        <tr class="line" >
+            <td>{{name}}</td>
+            <td>{{surname}}</td>
+            <td>{{phone}}</td>
+            <td>{{action}}</td>
+            <td>
+            <button type="button" class="button delete-btn">Удалить</button>
+            </td>
+        </tr>
+    </script>
 </body>
 </html>

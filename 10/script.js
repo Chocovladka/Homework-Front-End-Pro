@@ -1,21 +1,26 @@
+const DELETE_BTN_CLASS = 'delete-btn';
+const ADD_BTN_CLASS = 'add-btn';
+
 let tBody = document.querySelector('#t-body');
 
-let nameInput = document.querySelector('#name');
+let contactTemplate = document.querySelector('#contact-template').innerHTML;
 
-let surnameInput = document.querySelector('#surname');
+let nameInput = document.querySelector('#name-input');
 
-let phoneInput = document.querySelector('#phone');
+let surnameInput = document.querySelector('#surname-input');
 
-let actionInput = document.querySelector('#action');
+let phoneInput = document.querySelector('#phone-input');
 
-let inputs = document.querySelectorAll('input');
+let actionInput = document.querySelector('#action-input');
+
+let inputs = document.querySelectorAll('.input');
 
 container.addEventListener('click', onBtnClick)
 
 function onBtnClick(e) {
-    if (e.target.classList.contains("delete-btn"))  {
+    if (e.target.classList.contains(DELETE_BTN_CLASS))  {
         onDeleteBtnClick(e);
-    } else if (e.target.id === "btn") {
+    } else if (e.target.classList.contains(ADD_BTN_CLASS)) {
         onAddBtnClick(e);
     }
 }
@@ -24,30 +29,43 @@ function onDeleteBtnClick(e) {
     e.target.closest('tr').remove();
 }
 
-function onAddBtnClick() {
-    if ((!nameInput.value) ||
-        (!surnameInput.value) ||
-        (!phoneInput.value) ||
-        (!actionInput.value)) {
-        button.setAttribute('disabled', disabled);
-    }
-    addInfo(nameInput.value, surnameInput.value, phoneInput.value, actionInput.value);
+function onAddBtnClick(e) {
+    e.preventDefault();
+
+    isInputValid();
+    let newContact = getInfo();
+    addInfo(newContact);
     clearInput();
 }
 
-function addInfo(name, surname, phone, action) {
-    let elHtml = `
-    <tr>
-    <td>${name}</td>
-    <td>${surname}</td>
-    <td>${phone}</td>
-    <td>${action}</td>
-    <td>
-    <button class="button delete-btn">Удалить</button>
-    </td>
-    </tr>
-    `
-    tBody.insertAdjacentHTML("beforeend", elHtml)
+function isInputValid(){
+    if ((!nameInput.value) ||
+            (!surnameInput.value) ||
+            (!phoneInput.value) ||
+            (!actionInput.value)) {
+            button.setAttribute('disabled', disabled);
+        }
+}
+
+function getInfo() {
+    let contact = {};
+    inputs.forEach((inp) => {
+        contact[inp.name] = inp.value;
+    });
+    return contact;
+}
+
+function createContactHtml(contact) {
+    return contactTemplate
+        .replace('{{name}}', contact.name)
+        .replace('{{surname}}', contact.surname)
+        .replace('{{phone}}', contact.phone)
+        .replace('{{action}}', contact.action);
+}
+
+function addInfo(contact) {
+    let newContactHtml = createContactHtml(contact);
+    tBody.insertAdjacentHTML('beforeend', newContactHtml);
 }
 
 function clearInput() {
