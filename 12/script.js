@@ -3,26 +3,28 @@
 const calc = new Calculator(10);
 
 function Calculator(basicNum) {
+    this.base = basicNum;
+
     this.add = function (digit) {
-        return (isDigitValid(digit)) ? (basicNum += digit) : null;
+        return (isDigitValid(digit)) ? (this.base += digit) : null;
     };
     this.sub = function (digit) {
-        return (isDigitValid(digit)) ? (basicNum -= digit) : null;    
+        return (isDigitValid(digit)) ? (this.base -= digit) : null;    
         };
     this.mult = function (digit) {
-        return (isDigitValid(digit)) ? (basicNum *= digit) : null;
+        return (isDigitValid(digit)) ? (this.base *= digit) : null;
     };
     this.div = function (digit) {
-        return (isDigitValid(digit)) ? (basicNum /= digit) : null;
+        return (isDigitValid(digit)) ? (this.base /= digit) : null;
     };
     this.set = function (digit) {
-        return (isDigitValid(digit)) ? (basicNum = digit) : null;
+        return (isDigitValid(digit)) ? (this.base = digit) : null;
     };
     this.get = function () {
-        return basicNum;
+        return this.base;
     };
 }
 
-function isDigitValid(basicNum) {
-    return !isNaN(basicNum)
+function isDigitValid(num) {
+    return !isNaN(num)
 }
