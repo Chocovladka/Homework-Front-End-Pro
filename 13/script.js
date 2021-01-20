@@ -70,6 +70,7 @@ Hamburger.prototype.getCallories = function () {
 //     return Hamburger.calcSum(this.burgerSet, 'price');
 // };
 
+
 // Hamburger.prototype.calcSum = function (arr, prop) {
 //     return (arr.reduce((sum, item) => sum + item[prop], 0));
 // }
