@@ -53,24 +53,13 @@ Hamburger.prototype.addTopping = function (topping) {
 };
 
 Hamburger.prototype.getPrice = function () {
-    let arrPrice = this.burgerSet.map(function (item) {
-        return item.price;
-    })
-    return arrPrice.reduce((sum, current) => sum + current, 0);
+    return Hamburger.calcSum(this.burgerSet, 'price');
 };
 
 Hamburger.prototype.getCallories = function () {
-    let arrCallories = this.burgerSet.map(function (item) {
-        return item.callories;
-    })
-    return arrCallories.reduce((sum, current) => sum + current, 0);
+    return Hamburger.calcSum(this.burgerSet, 'callories');
+};
+
+Hamburger.calcSum = function (arr, propertyName) {
+    return arr.reduce((sum, item) => sum + item[propertyName], 0);
 }
-
-// Hamburger.prototype.getPrice = function () {
-//     return Hamburger.calcSum(this.burgerSet, 'price');
-// };
-
-
-// Hamburger.prototype.calcSum = function (arr, prop) {
-//     return (arr.reduce((sum, item) => sum + item[prop], 0));
-// }
