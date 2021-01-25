@@ -15,7 +15,7 @@ class Group{
     }
 
     getAverageMark() {
-        let groupMarks = this._students.flatMap(({marks}) => marks).flat()
+        let groupMarks = this._students.flatMap(({marks}) => marks)
         return groupMarks.reduce((sum, item) => sum + item)/groupMarks.length;
     }
 }
@@ -23,7 +23,7 @@ class Group{
 class Student{
     constructor(name, marks) {
         this.name = name,
-        this.marks = [marks]    
+        this.marks = marks    
     }
 }
 
