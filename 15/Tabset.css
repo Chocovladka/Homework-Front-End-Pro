@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(6, 66, 77);
+}
+
+#container{
+    position: relative;
+    display: flex;
+    width: 60vw;
+    height: 50vh;
+    margin: 30px auto;
+    background-color: rgb(158, 211, 202);
+}
+
+.tabset-item-title{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgb(149, 243, 185);
+    border-radius: 10px;
+}
+
+.tabset-item-title:hover{
+    opacity: 80%;
+    background-color:rgb(135, 212, 200) ;
+}
+
+.active{
+    opacity: 80%;
+    background-color:rgb(211, 158, 59) ;
+} 
+
+.tabset-item-body{
+    padding: 20px 32px;
+    margin: 20px auto;
+    display: none;
+    background-color: rgb(149, 243, 185);
+    border-radius: 10px;
+}
+
+.tabset-item-body.open{
+    display: block;
+    width: 90%;
+    position: absolute;
+    left: 0;
+}
