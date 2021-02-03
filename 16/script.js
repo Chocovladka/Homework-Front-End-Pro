@@ -12,10 +12,9 @@ function onSearchBtnClick() {
     let userLogin = loginInput.value;
     fetch(USERS_URL + userLogin)
         .then(res => res.json())
-        .then(data => showInfo(data))
-        .catch(console.warn('error'));
+        .then(data => showInfo(data));  
+  };
     
-}
 
 function isInputValid() {
     if (!loginInput.value) {
@@ -33,14 +32,16 @@ function showInfo(data) {
 
 // Chocovladka
 // agribanov
-
-// function onSearchBtnClick() {
+    
+//     function onSearchBtnClick() {
 //     isInputValid();
 //     let userLogin = loginInput.value;
 //     fetch(USERS_URL + userLogin)
+//     if (!fetch(USERS_URL + userLogin).ok) {
+//         throw new Error('Ответ сети был не ok.')
+//     }else{
 //         .then(res => res.json())
-//         .then(data => console.log(data.name));
-    
-// }
-
-// .catch(console.log('error'))
+//         .then(data => showInfo(data))
+//         .catch(error => console.log('We have some problems'));
+        
+//   };
