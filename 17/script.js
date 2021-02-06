@@ -85,8 +85,7 @@ function getTaskElement(el) {
 }
 
 function toggleTask(todoId) {
-    let todo = findTodo(todoId);
-    todo.completed = !todo.completed;
+    findTodo(todoId).completed = !todo.completed;
     renderTodos(todoList);
 }
 
