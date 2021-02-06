@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated-ToDo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" async></script>
+    </head>
+    
+    <body>
+        <div id="list-container">
+            <h1 id="main-title">To Do List</h1>
+            <ul id="list"></ul>
+            <form id="enter-task-form">
+                <input id="task-input" type="text" name="list-input">
+                <button  id="add-btn">Add To List</button>
+            </form>
+        </div>
+        <script type="text/template" id="list-item-template">
+                <li class="list-item {{done-class}} " data-id="{{id}}">
+                    {{to-do-item}}
+                    <span class="delete-icon">X</span>
+                </li>
+            </script>
+    </body>
+    
+    </html>
