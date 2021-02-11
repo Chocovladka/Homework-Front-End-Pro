@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Контактов</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="Http.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <table id="table">
+            <caption id="table-title">Список контактов</caption>
+            <tbody id="t-body">
+                <thead>
+                    <tr>
+                        <th >Имя</th>
+                        <th >Фамилия</th>
+                        <th >Номер</th>
+                        <th >Действие</th>
+                    </tr>
+                </thead>
+            </tbody>
+        </table>
+        <form action="#">
+            <input  id="name-input" name="name" class="input" type="text">
+            <input id="surname-input" name="surname" class="input" type="text">
+            <input id="phone-input" name="phone" class="input" type="tel">
+            <button id="add-btn" class="button add-btn">Добавить</button>
+        </form>
+    </div>
+    <script type="text/template" id="contact-template">
+        <tr class="line" data-id="{{id}}">
+            <td class="name" >{{name}}</td>
+            <td class="surname">{{surname}}</td>
+            <td class="phone">{{phone}}</td>
+            <td>
+            <button type="button" class="button delete-btn">Удалить</button>
+            </td>
+        </tr>
+    </script>
+</body>
+</html>

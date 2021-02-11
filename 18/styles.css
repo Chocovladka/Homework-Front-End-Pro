@@ -1,0 +1,48 @@
+body{
+    background-image: url(img/background.jpg) ;
+    color: #fff;
+    font-family: 'Alegreya', serif;
+}
+
+#container{
+    text-align: center;
+}
+
+#table{
+    width: 49%;
+    margin: 0 auto 30px;
+    border: 2px solid rgb(89, 210, 231);
+    border-radius: 10px;
+    background-color: rgba(64, 224, 208, 0.3);
+}
+
+#table-title{
+    font-size: 30px;
+}
+
+thead{
+    font-size: 20px;
+}
+
+/* .line{
+    border: 2px solid greenyellow;
+} */
+
+.input{
+    height: 25px;
+    color: rgb(13, 42, 105);
+    border-radius: 10px;
+    border-color: transparent;
+    outline: none;
+}
+
+.button{
+    cursor: pointer;
+    font-family: 'Alegreya', serif;
+    border-radius: 10px;
+    border-color: transparent;
+    height: 30px;
+    width: 100px;
+    outline: none;
+    background-color: rgb(180, 235, 227);
+}
