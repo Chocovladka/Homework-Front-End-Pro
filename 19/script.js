@@ -55,7 +55,6 @@ function getImagesUrl(albumId) {
 function renderImages(list) {
     let html = list.map(createImageHtml).join('');
     imageContainer.innerHTML = html;
-    console.log(html)
 }
 
 function createImageHtml(img) {
