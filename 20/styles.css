@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Philosopher', sans-serif;
+}
+
+body{
+    margin: 50px auto;
+    text-align: center;
+    background-color: rgb(8, 31, 17);
+    color: #fff;
+    
+}
+
+header{
+    position: relative;
+}
+
+#add-sticker-btn{
+    position: absolute;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 17px;
+    border: 4px solid  rgb(197, 241, 34);
+    height: 50px;
+    width: 140px;
+    top: 0;
+    right: 14.5%;
+    transition: 1s all ease;
+}
+
+#add-sticker-btn:hover{
+    background-color: rgb(197, 241, 34);
+}
+
+#sticker-wrap{
+    padding-top: 20px;
+    margin: 50px auto;
+    width: 70vw;
+    min-height: 300px;
+    background-color: rgb(191, 245, 178);
+}
+
+.sticker{
+    display: inline-block;
+}
+
+.delete-icon{
+    cursor: pointer;
+    color: black;
+}
