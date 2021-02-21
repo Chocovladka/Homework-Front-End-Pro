@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Контактов JQuery</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+    <script src="Http.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <form action="#">
+            <button id="add-btn" class="button add-btn">Добавить</button>
+        </form>
+        <table id="table">
+            <caption id="table-title">Список контактов</caption>
+            <tbody id="t-body">
+                <thead>
+                    <tr>
+                        <th >Имя</th>
+                        <th >Фамилия</th>
+                        <th >Номер</th>
+                        <th >Действие</th>
+                    </tr>
+                </thead>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <div id="edit-form" title="Edit contact">
+        <form id="contact-form">
+            <fieldset>
+                <label for="id-input"></label>
+                <input type="text" id="id-input" name="id" class="input text ui-widget-content ui-corner-all" />
+                <label for="name-input">Имя</label>
+                <input type="text" name="name" id="name-input" class="input text ui-widget-content ui-corner-all">
+                <label for="surname-input">Фамилия</label>
+                <input type="text" name="surname" id="surname-input"
+                    class="input text ui-widget-content ui-corner-all">
+                <label for="phone-input">Телефон</label>
+                <input type="tel" name="phone" id="phone-input"
+                    class="input text ui-widget-content ui-corner-all">
+    
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
+
+    <script type="text/template" id="contact-template">
+        <tr class="line" data-id="{{id}}">
+            <td class="name" >{{name}}</td>
+            <td class="surname">{{surname}}</td>
+            <td class="phone">{{phone}}</td>
+            <td>
+            <button type="button" class="button edit-btn">Изменить</button>
+            <button type="button" class="button delete-btn">Удалить</button>
+            </td>
+        </tr>
+    </script>
+</body>
+</html>
