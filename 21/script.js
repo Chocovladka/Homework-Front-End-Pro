@@ -168,6 +168,6 @@ function getInfo() {
 }
 
 function resetForm() {
-    // $inputs.val('')
-    $('#contact-form').trigger('reset');
+    $inputs.val('')
+    // $('#contact-form').trigger('reset');
 }
