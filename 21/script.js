@@ -88,7 +88,7 @@ function getElementId(el) {
 }
 
 function deleteContact(contactId) {
-    contactsList.filter(contact => contact.id !== contactId);
+    contactList = contactsList.filter(contact => contact.id !== contactId);
     ContactsSource.delete(contactId);
     let $el = findElById(contactId);
     $el && $el.remove();
