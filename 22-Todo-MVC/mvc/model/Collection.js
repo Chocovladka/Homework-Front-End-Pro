@@ -45,7 +45,7 @@ class Collection{
     }
 
     create(todo) {
-        fetch(this._url, {
+        return fetch(this._url, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -55,10 +55,8 @@ class Collection{
             .then(res => res.json())
             .then(item => {
                 this._list.push(item)
-                console.log(item.id)
-                return item.id
-            });
-        return Promise.resolve();
+                return item
+            })
     }
 
 }

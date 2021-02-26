@@ -35,8 +35,7 @@ class Controller{
 
     createTodo(item) {
         this.todosCollection.create(item)
-        .then((id) => this.listView.renderElement(this.todosCollection.get(id)))
-        // this.listView.renderElement(item)
+        .then((item) => this.listView.renderNewTodo(item))
         
     }
 

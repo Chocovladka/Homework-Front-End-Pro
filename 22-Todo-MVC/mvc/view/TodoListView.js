@@ -63,6 +63,12 @@ class TodoListView{
         let itemHtml = this.generateItemHtml(item);
         this._$el.find(`[data-id="${item.id}"]`)
             .replaceWith(itemHtml)
+        
+    }
+
+    renderNewTodo(item) {
+        let itemHtml = this.generateItemHtml(item);
+        this._$el.append(itemHtml)
     }
 }
 

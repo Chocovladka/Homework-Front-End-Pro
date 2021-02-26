@@ -20,7 +20,6 @@ class NewTodoFormView{
             title: this.$todoInput.val(),
             completed: false
         }
-        console.log(todo)
         this._option.onSave(todo)
         this.clearInput();
     }
