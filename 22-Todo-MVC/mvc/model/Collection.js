@@ -40,6 +40,7 @@ class Collection{
     }
 
     get(id) {
+        console.log(id)
         return this._list.find((item) => item.id === id);
     }
 
@@ -51,9 +52,13 @@ class Collection{
             },
             body: JSON.stringify(todo)
         })
-            .then(res => res.json)
-            .then(todo => this._list.push(todo))
-        
+            .then(res => res.json())
+            .then(item => {
+                this._list.push(item)
+                console.log(item.id)
+                return item.id
+            });
+        return Promise.resolve();
     }
 
 }

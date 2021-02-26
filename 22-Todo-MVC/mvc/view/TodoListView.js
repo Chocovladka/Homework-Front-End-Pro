@@ -50,7 +50,6 @@ class TodoListView{
     }
 
     getElementId(el) {
-        console.log(el)
         let parent = el.closest(TodoListView.TODO_ITEM_SELECTOR);
         return parent && parent.dataset.id
     }
@@ -60,6 +59,7 @@ class TodoListView{
     }
 
     renderElement(item) {
+        console.log(item)
         let itemHtml = this.generateItemHtml(item);
         this._$el.find(`[data-id="${item.id}"]`)
             .replaceWith(itemHtml)
