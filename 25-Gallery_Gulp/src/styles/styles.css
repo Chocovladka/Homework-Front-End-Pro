@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(20, 48, 48);
+    color: #fff;
+}
+
+#container{
+    display: flex;
+}
+
+.container-item{
+    display: inline-block;
+    border: 2px solid rgb(209, 245, 6);
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+#album-list{
+    max-width: 400px;
+}
+
+.album-list-item{
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    border: 2px dotted rgb(194, 238, 0);
+    border-radius: 15px;
+}
+
+#image-wrap{
+    max-width: 920px;
+    overflow: hidden;
+}
+
+.image-item{
+    display: inline-block;
+}
