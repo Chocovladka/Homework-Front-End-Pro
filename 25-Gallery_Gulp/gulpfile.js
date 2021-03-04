@@ -1,11 +1,17 @@
 const { src, dest, series, parallel, watch } = require('gulp');
 const concat = require('gulp-concat');
 const clean = require('gulp-clean');
+const uglify = require('gulp-uglify');
 
 function cleanDist() {
     return src('./dist', { read: false })
     .pipe(clean())
 }
+
+// function minimize() {
+//     return src('./dist/**')
+//         .pipe(uglify())
+// }
 
 function copyHtml() {
     return src('./src/index.html')
@@ -26,11 +32,6 @@ function copyCss() {
 function watchFiiles() {
     watch('./src/**/*.js', {events:'all'}, copyJs)
 }
-
-// function build() {
-//     copyJs();
-//     return copyHtml()
-// }
 
 module.exports = {
     build: series(cleanDist, parallel(copyJs, copyHtml, copyCss)),

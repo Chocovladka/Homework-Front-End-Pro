@@ -19,6 +19,7 @@ function createRequest(url) {
 init()
 
 function init() {
+    console.log('min')
     httpAlbums.list()
         .then(setAlbumList)
         .then(renderAlbums)
