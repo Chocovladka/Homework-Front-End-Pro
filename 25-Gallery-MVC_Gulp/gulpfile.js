@@ -8,19 +8,19 @@ function cleanDist() {
     .pipe(clean())
 }
 
-// function minimize() {
-//     return src('./dist/**')
-//         .pipe(uglify())
-// }
-
 function copyHtml() {
     return src('./src/index.html')
     .pipe(dest('./dist'))
 }
 
 function copyJs() {
-    return src('./src/**/*.js')
+    return src(['./src/mvc/model/Http.js',
+        './src/mvc/model/Collection.js',
+        './src/mvc/view/*.js',
+        './src/mvc/controller/*.js',
+        './src/script.js'])
         .pipe(concat('all.js'))
+        .pipe(uglify())
     .pipe(dest('./dist'))
 }
 
