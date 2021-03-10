@@ -1,0 +1,129 @@
+body{
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    background: linear-gradient(to bottom left, rgb(149, 120, 158), rgb(61, 3, 78));
+}
+
+#main-title{
+    text-align: center;
+}
+
+#root{
+    position: relative;
+    width: 80vw;
+    margin: 0 auto;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+#table-head{
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    width: 80vw;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+#surname-title{
+    margin-left: 3rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* padding-bottom: 1rem; */
+}
+#lection-title{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 26rem;
+}
+
+#mail-title{
+    font-weight: bold;
+    font-size: 1.5rem;  
+    margin-left: 18rem;
+}
+
+#lection-numeration{
+    position: absolute;
+    right: 19%;
+    top: 2.1%
+}
+
+.lection-number{
+    margin-left: 4rem;
+}
+
+.student-line{
+    border: 2px solid rgb(234, 248, 35);
+    margin-bottom: 10px;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.surname{
+    width: 10rem;
+    min-height: 30px;
+}
+
+.mark-input{
+    width: 50px;
+}
+
+.delete-icon{
+    color: #fff;
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    margin:  0 10px 0 20px;
+    transition: 1s;
+}
+
+.delete-icon:hover{
+    color: red;
+}
+
+.student-btn{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    height: 2rem;
+    width: 8rem;
+    background-color: rgb(234, 248, 35);
+}
+
+#student-mail{
+    width: 11rem;
+}
+
+#student-form{
+    position: absolute;
+    padding-bottom: 3rem;
+    left: 30%;
+}
+
+#name-input,
+#mail-input{
+    font-family: 'Playfair Display', serif;
+    border: 2px solid rgb(234, 248, 35);
+    cursor: pointer;
+    outline: none;
+    height: 1.2rem;
+    width: 10rem;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 80vw;
+    width: 80vw;
+  }
+
+  to {
+    margin-left: 9%;
+    width: 80vw;
+  }
+
+}
