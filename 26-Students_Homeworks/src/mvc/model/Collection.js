@@ -1,13 +1,12 @@
 class Collection extends Http{
 
     constructor(baseUrl) {
-        super()
-        this.$baseUrl = baseUrl;
+        super(baseUrl)
         this.studentsList = [];
     }
 
     fetch() {
-        return this.list(this.$baseUrl).then((data) => this.setData(data));
+        return this.list().then((data) => this.setData(data));
     }
 
     setData(data) {
@@ -19,13 +18,13 @@ class Collection extends Http{
     }
 
     deleteStudent(id) {
-        this.delete(this.$baseUrl, id)
+        this.delete(id)
         this.studentsList = this.studentsList.filter(item => item.id !== id)
         return Promise.resolve();
     }
 
     createStudent(item) {
-        return this.create(this.$baseUrl, item)
+        return this.create( item)
             .then(item => {
                 this.studentsList.push(item);
                 return item
@@ -37,7 +36,7 @@ class Collection extends Http{
         let student = this.findStudentById(id);
         student.marks = data;
         
-        return this.update(this.$baseUrl, student)
+        return this.update(student)
             .then(item => {
                 this.studentsList = this.studentsList.map((el) => (el.id != item.id ? el : item));
                 return item

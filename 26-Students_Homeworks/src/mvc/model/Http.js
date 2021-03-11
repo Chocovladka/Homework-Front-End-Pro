@@ -3,8 +3,8 @@ class Http {
         this._baseUrl = baseUrl;
     }
 
-    request(url, uri, method, data) {
-        return fetch(url + '/' + uri, {
+    request(uri, method, data) {
+        return fetch(this._baseUrl + '/' + uri, {
             method,
             body: data ? JSON.stringify(data) : null,
             headers: {
@@ -13,35 +13,35 @@ class Http {
         }).then((res) => res.json());
     }
 
-    get(url, uri = '') {
-        return this.request(url, uri, 'GET');
+    get(uri = '') {
+        return this.request( uri, 'GET');
     }
 
-    post(url, data) {
-        return this.request(url, '', 'POST', data);
+    post(data) {
+        return this.request('', 'POST', data);
     }
 
-    put(url,id, data) {
-        return this.request(url, id, 'PUT', data);
+    put(id, data) {
+        return this.request(id, 'PUT', data);
     }
 
-    delete(url, id) {
-        return this.request(url, id, 'DELETE');
+    delete(id) {
+        return this.request( id, 'DELETE');
     }
 
-    create(url, data) {
-        return this.post(url, data);
+    create(data) {
+        return this.post(data);
     }
 
-    update(url, data) {
-        return this.put(url, data.id, data);
+    update( data) {
+        return this.put( data.id, data);
     }
 
-    list(url) {
-        return this.get(url);
+    list() {
+        return this.get();
     }
 
-    getOne(url, id) {
-        return this.get(url,id);
+    getOne(id) {
+        return this.get(id);
     }
 }
