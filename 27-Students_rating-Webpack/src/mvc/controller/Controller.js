@@ -1,6 +1,7 @@
-import { STUDENTS_URL } from '../../configs';
+import { STUDENTS_URL, appendTo } from '../../configs.js';
 import Collection from '../model/Collection.js';
-import MarksView from '../view/MarksView';
+import MarksView from '../view/MarksView.js';
+import StudentFormView from '../view/StudentFormView';
 
 export default class Controller{
     constructor($container) {
@@ -15,15 +16,15 @@ export default class Controller{
             onAdd: () => this.addForm(),
             onUpdate: (id, data)=> this.updateStudent(id, data)
         });
-        this.marksView.appendTo($container, this.marksView._$el);
-        this.marksView.appendTo($container, this.marksView._$addBtn);
+        appendTo($container, this.marksView._$el);
+        appendTo($container, this.marksView._$addBtn);
         this.studentForm = new StudentFormView({
             onSave: (item) => this.createStudent(item)
         })
     }
 
     renderList() {
-        this.marksView.renderList(this.studentsCollection.getList())
+        this.marksView.renderStudentList(this.studentsCollection.getList())
     }
 
     deleteStudent(id) {
@@ -32,7 +33,7 @@ export default class Controller{
     }
 
     addForm() {
-       this.marksView.appendTo(this.$container, this.studentForm.$createForm) 
+       appendTo(this.$container, this.studentForm.$createForm) 
     }
 
     createStudent(item) {

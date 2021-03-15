@@ -4,10 +4,10 @@ import Http from './Http';
 export default class Collection extends Http{
 
     constructor(baseUrl) {
-        super(baseUrl)
+        super(baseUrl);
         this.studentsList = [];
     }
-
+    
     fetch() {
         return this.list().then((data) => this.setData(data));
     }

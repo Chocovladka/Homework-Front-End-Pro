@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { createForm } from '../../htmlTemplates';
 
 export default class StudentFormView{
     constructor(options) {
@@ -9,18 +10,13 @@ export default class StudentFormView{
     }
 
     initForm() {
-        return $(`<form id="student-form">
-        <input type="text" id="name-input">
-        <input type="email" id="mail-input">
-        <input type="submit" id="save-btn" class="student-btn" value="Сохранить">
-        </form>`)
+        return createForm()
         .on ('submit', this.onCreateFormSubmit.bind(this))
         
     }
 
     onCreateFormSubmit(e) {
         e.preventDefault();
-        console.log(1);
         let student = {
             name: this.$nameInput.val(),
             email: this.$mailInput.val()
