@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+    min-height: 100vh;
+    /* font-family: 'Playfair Display', serif; */
+    color: #fff;
+    background: linear-gradient(to bottom left, rgb(187, 235, 98), rgb(61, 3, 78));
+}
+
+#table-head{
+   width: 30vw;
+   margin: 0 auto;
+}
+
+.chat-head{
+    display: inline-block;
+    margin-right: 60px;
+
+}
+
+.chat-head:first-child{
+    float: left;
+
+}
+
+.username,
+.msg{
+    display: inline-block;
+    margin-right: 60px;
+}
+
+.username{
+    float: left;
+}
