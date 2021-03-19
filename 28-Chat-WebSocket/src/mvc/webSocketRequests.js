@@ -16,7 +16,7 @@ export default class WebSocketRequests{
     }
 
     onSocketMessage(data) {
-        let msg = JSON.parse(data);
+        let msg = JSON.parse(data.data);
         this.options.onAdd(msg)
     }
 

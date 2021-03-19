@@ -17,7 +17,7 @@ export default class Controller{
         appendTo(this.$container, this.chatView.$chat);
 
         this.formView = new FormView({
-            onSave: (data) => this.sendMsg(data)
+            onSave: (data) => this.sendMessage(data)
             
         });
         appendTo(this.$container, this.formView.$form);
@@ -26,7 +26,7 @@ export default class Controller{
 
     }
 
-    sendMsg(data) {
+    sendMessage(data) {
         this.chat.sendMsg(data);
     }
 
