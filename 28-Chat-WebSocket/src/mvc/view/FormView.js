@@ -24,9 +24,7 @@ export default class FormView{
             username: this.$nameInput.val(),
             message: this.$msgInput.val()
         }
-        let chatData = JSON.stringify(chatMsg);
-        console.log(chatData)
-        this.options.onSave(chatData);
+        this.options.onSave(chatMsg);
         this.clearInputs();
     }
 

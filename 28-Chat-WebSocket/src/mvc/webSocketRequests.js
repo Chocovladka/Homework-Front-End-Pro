@@ -1,24 +1,27 @@
 import { chatWss } from './utils';
 
-export const socket = new WebSocket(chatWss);
+export default class WebSocketRequests{
+    constructor(options) {
+        this.options = options;
+    }
 
-export function onOpen(data) {
-    let msg = JSON.stringify(data);
-    socket.onopen = sendMsg(msg);
-}
+    createChat() {
+        this.socket = new WebSocket(chatWss);
+        this.socket.onopen = this.onSocketOpen.bind(this);
+        this.socket.onmessage = this.onSocketMessage.bind(this);
+    }
 
-export function sendMsg(data) {
-    socket.send(data)
-    console.log(data)
+    onSocketOpen() {
+        this.socket.send('Welcome to the Chat')
+    }
+
+    onSocketMessage(data) {
+        let msg = JSON.parse(data);
+        this.options.onAdd(msg)
+    }
+
+    sendMsg(data) {
+        this.socket.send(JSON.stringify(data))
+    }
 }
     
-export function onMsg(data){
-    socket.onmessage = showMsg(data);
-
-}
-
-export function showMsg(data) {
-    let out = JSON.parse(data);
-    console.log(out)
-    return out
-}
